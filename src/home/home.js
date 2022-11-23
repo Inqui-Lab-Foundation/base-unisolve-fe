@@ -346,6 +346,7 @@ const Home = () => {
                 className="landing-menu"
                 isOpen={sidebar}
                 onOpen={() => setSidebar(!sidebar)}
+                onClose={() => setSidebar(!sidebar)}
             >
                 <Link className="menu-item" to="/login">
                     {t('home_nav_links.btn_login')}
@@ -399,16 +400,19 @@ const Home = () => {
                             {t('home_nav_links.faq')}
                         </AnchorLink>
                     </NavItem>
+                     <NavItem className="mt-3 ms-3">
+                        <LanguageSelectorComp module="general" />
+                    </NavItem>
                 </Nav>
             </Menu>
             <section className="header ">
                 <div className="home-banner">
                     <Container>
-                        <Row className="justify-content-between  pt-5">
+                        <Row className="justify-content-between fixed-top p-5 pb-lg-0 pb-3 pt-sm-2 mb-5 nav_row">
                             <Col md={5} className="my-auto mobile-menu">
-                                <h2 className="logo">
+                                <h2 className="logo mb-0">
                                     <Link className="" exact="true" to="/">
-                                        <figure>
+                                        <figure className="m-0">
                                             <img
                                                 src={LogoTn}
                                                 alt="logo"
@@ -421,7 +425,7 @@ const Home = () => {
                             </Col>
                             <Col
                                 md={7}
-                                className="text-right multi-actions main-menu"
+                                className="text-right multi-actions main-menu my-auto"
                             >
                                 <div className="nav p-4 justify-content-end">
                                     <Nav className="ml-auto ">
@@ -465,8 +469,11 @@ const Home = () => {
                                                 {t('home_nav_links.faq')}
                                             </AnchorLink>
                                         </NavItem>
+                                        <NavItem>
+                                            <LanguageSelectorComp module="general" />
+                                        </NavItem>
                                     </Nav>
-                                    <LanguageSelectorComp module="general" />
+                                    {/* <LanguageSelectorComp module="general" /> */}
                                 </div>
                             </Col>
                         </Row>
@@ -565,8 +572,8 @@ const Home = () => {
                             </div>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col md={6}>
+                    <Row className="sidp_row p-3">
+                        <Col md={6} className="pe-md-4">
                             <div
                                 dangerouslySetInnerHTML={{
                                     __html: t('home_tl.about_us_desc')
@@ -581,7 +588,7 @@ const Home = () => {
                             </div>
                         </Col>
                     </Row>
-                    <Row className="my-5 py-5">
+                    <Row className="my-5 py-5 upshift p-3">
                         <Col md={12} lg={5} className="teacher ">
                             <figure className="text-left">
                                 <img
@@ -1252,7 +1259,7 @@ const Home = () => {
                         </Col>
                     </Row>
                 </Container>
-                <Row className="w-100 mt-5 footer-sub">
+                <Row className="w-100 mt-5 mx-0 footer-sub">
                     <Col md={12} className="text-center">
                         <p className="my-0 py-3 text-white">
                             © UNISOLVE, UNICEF {new Date().getFullYear()}.{' '}

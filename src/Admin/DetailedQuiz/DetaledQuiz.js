@@ -20,6 +20,7 @@ import {
     getAdminCourseDetails
 } from '../../redux/actions';
 import QuizResponse from './QuizResponse';
+import succesImg from "../../assets/media/success1.jpeg";
 //import { getCurrentUser } from '../../helpers/Utils';
 const DetaledQuiz = (props) => {
     const { t } = useTranslation();
@@ -122,11 +123,14 @@ const DetaledQuiz = (props) => {
                     <div className="container new-result">
                         <div className="row justify-content-md-center ">
                             <div className="col col-lg-9">
-                                <div className="results-heading">
+                                {/* <div className="results-heading">
                                     <span></span>
-                                </div>
-                                <div className="mt-4 d-flex justify-content-center align-items-center">
-                                    <span>{t('student.quiz_completed')}</span>
+                                </div> */}
+                                <div className="mt-4 text-center">
+                                     <div className="success_img text-center w-100">
+                                        <img src={succesImg} alt=".." /><br />
+                                    </div>
+                                    <h2>{t('student.quiz_completed')}</h2>
                                 </div>
                                 <div className="results-heading mt-4">
                                     <img src={ResultStar} alt="star" />
